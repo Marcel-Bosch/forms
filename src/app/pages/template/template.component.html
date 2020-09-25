@@ -60,7 +60,52 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Country</label>
+    <div class="col-8">
+    <select class="form-control"
+            name="country"
+            [disabled]="countries.length === 0"
+            [class.is-invalid]="country.invalid && country.touched"
+            [ngModel]="user.country"
+            required
+            #country="ngModel">
+            <option *ngFor="let country of countries" [value]="country.code">{{country.name}}
+            </option>
+          </select>
+          <small class="form-text text-danger"
+          *ngIf="country.value == ''&& country.touched">*Please choose a country</small>
+    </div>
+  </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Gender</label>
+    <div class="col-8">
+      <div class="form-check form-check-inline">
+        <input type="radio" 
+               name="gender"
+               value="M"
+               required
+               [class.is-invalid]= "gender.invalid && gender.touched"
+               #gender="ngModel"
+               [ngModel]="user.gender"
+               class="form-check-input">
+               <label class="form-check-label">Male</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input type="radio" 
+               name="gender"
+               value="F"
+               required
+               [class.is-invalid]= "gender.invalid && gender.touched"
+               #gender="ngModel"
+               [ngModel]="user.gender"
+               class="form-check-input">
+               <label class="form-check-label">Female</label>
+      </div>
+    </div>
+  </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>

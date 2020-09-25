@@ -9,7 +9,7 @@ import { ReactiveComponent } from './pages/reactive/reactive.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveComponent
   ],
   imports: [
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     BrowserModule,

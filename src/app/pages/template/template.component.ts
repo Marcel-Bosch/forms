@@ -12,23 +12,33 @@ export class TemplateComponent implements OnInit {
   user = {
     name: "John",
     surname: "Smith",
-    email: "jsmith@gmail.com"
+    email: "jsmith@gmail.com",
+    country: 'AND',
+    gender: 'F'
   }
+
+  countries: any[] = [];
+
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
     this.countryService.getCountry().subscribe(countries=>{
-      console.log(countries);
-      
+      this.countries = countries;
+      this.countries.unshift({
+        name: '[Select your country]',
+        code: ''
+      })
     })
   }
   save(f:NgForm){
     console.log(f);
+    console.log(f.value);
+    
     if(f.invalid){
       Object.values( f.controls ).forEach(control =>{
         control.markAllAsTouched();
       });
-    }return;
+    }return 
     
   }
 }
