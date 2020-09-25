@@ -45,7 +45,7 @@
   </div>
 
   <div class="form-group row">
-    <label class="col-2 col-form-label">Repeat the password</label>
+    <label class="col-2 col-form-label">Repeat</label>
     <div class="col">
 
       <input class="form-control"
@@ -91,12 +91,21 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col">
+      <button type="submit" class="btn btn-outline-info btn-block">
+        Save
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-8">
     <div class="col">
-      <table class="table">
+      <table class="table text-info">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>#</th>
             <th>Hobbies</th>
             <th>Delete</th>
           </tr>
@@ -113,25 +122,18 @@
               <button class="btn btn-danger"
                       (click)="deleteHobbie(i)"
                       >Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="btn btn-primary mt-3 mb-5 btn-block"
-              type="button"
-              (click)="addHobbie()">
-              +Add</button>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label class="col-2 col-form-label">&nbsp;</label>
-    <div class="input-group col">
-      <button type="submit" class="btn btn-outline-primary btn-block">
-        Save
-      </button>
-    </div>
-  </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button class="btn btn-info mt-3 mb-5"
+                  type="button"
+                  (click)="addHobbie()">
+                  +Add hobbie</button>
+          
+  
 
 </form>
 
